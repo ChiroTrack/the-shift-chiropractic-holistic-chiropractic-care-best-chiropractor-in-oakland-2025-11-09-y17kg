@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Shift Chiropractic - Best Chiropractor in Oakland, CA. Holistic chiropractic care with hands-on full body adjustments. Open 7 days a week.">
+    <meta name="keywords" content="chiropractor, Oakland, chiropractic care, holistic health, adjustments">
+    <meta name="author" content="The Shift Chiropractic">
+    <title>The Shift Chiropractic - Best Chiropractor in Oakland, CA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        :root {
+            --primary: #FF5A5F;
+            --secondary: #1A1A1A;
+            --accent: #FFD166;
+        }
+        
+        .primary-btn {
+            background-color: var(--primary);
+            color: white;
+            border-radius: 9999px;
+            padding: 12px 32px;
+            font-weight: 600;
+            transition: all 300ms ease-out;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .primary-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(255, 90, 95, 0.3);
+            filter: brightness(1.1);
+        }
+        
+        .primary-btn:active {
+            transform: scale(0.98);
+        }
+        
+        .card-base {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 24px;
+            transition: all 300ms ease-out;
+        }
+        
+        .card-base:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 90, 95, 0.3);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #FF5A5F 0%, #FFD166 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-heading {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: white;
+        }
+        
+        .section-subheading {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+        
+        .accent-line {
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary);
+            border-radius: 2px;
+            margin-bottom: 16px;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 24px 0;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.125rem;
+            color: white;
+            transition: color 300ms ease-out;
+            user-select: none;
+        }
+        
+        .faq-question:hover {
+            color: var(--primary);
+        }
+        
+        .faq-icon {
+            flex-shrink: 0;
+            transition: transform 300ms ease-out;
+            width: 24px;
+            height: 24px;
+            color: var(--primary);
+        }
+        
+        .faq-answer {
+            margin-top: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            font-size: 1rem;
+            animation: slideDown 300ms ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 90, 95, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 300ms ease-out;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(255, 90, 95, 0.15);
+            border-color: rgba(255, 90, 95, 0.4);
+        }
+        
+        .star-rating {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 16px;
+        }
+        
+        .star {
+            color: var(--accent);
+            font-size: 1rem;
+        }
+        
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(255, 90, 95, 0.1) 0%, rgba(255, 209, 102, 0.05) 100%);
+        }
+        
+        @media (max-width: 768px) {
+            .section-heading {
+                font-size: 2rem;
+            }
+            
+            .section-subheading {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white smooth-scroll">
+    <!-- Header & Navigation -->
+    <header class="w-full">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center justify-between">
+                <a href="https://ChiroTrack.github.io/the-shift-chiropractic-holistic-chiropractic-care-best-chiropractor-in-oakland-2025-11-09-y17kg" class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full" style="background-color: var(--primary);"></div>
+                    <span class="font-bold text-xl hidden sm:block">The Shift</span>
+                </a>
+                <a href="https://ChiroTrack.github.io/the-shift-chiropractic-holistic-chiropractic-care-best-chiropractor-in-oakland-2025-11-09-y17kg/blog.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2">
+                    <i class="fas fa-arrow-left"></i>
+                    Back
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Blog Content -->
+    <main class="max-w-4xl mx-auto px-4 py-12 bg-gray-900">
+        <article class="prose prose-lg max-w-none">
+            <h1 class="text-4xl font-bold mb-6 text-white">Understanding the Benefits of Holistic Chiropractic Care: A Complete Guide to Full-Body Wellness</h1>
+            
+            <img src="https://images.unsplash.com/photo-1576091160550-112173f7f869?w=1200&h=675&fit=crop&q=80" alt="Professional chiropractor performing hands-on spinal adjustment and full body treatment" class="w-full rounded-lg shadow-lg mb-8">
+            
+            <p class="mb-6 leading-relaxed text-gray-300">In today's fast-paced world, more people are experiencing chronic pain, poor posture, and misalignment issues that affect their quality of life. Whether you're dealing with back pain from long hours at a desk, neck tension from stress, or sports-related injuries, finding effective solutions is crucial. Holistic chiropractic care offers a comprehensive approach to wellness that goes beyond simply treating symptoms. At The Shift Chiropractic in Oakland, we believe that true health comes from addressing the root causes of pain and dysfunction through personalized, hands-on treatment. This comprehensive guide explores the transformative benefits of holistic chiropractic care and how it can help you achieve lasting wellness.</p>
+
+            <h2 class="text-3xl font-semibold mt-8 mb-4 text-white">What is Holistic Chiropractic Care?</h2>
+            
+            <p class="mb-4 leading-relaxed text-gray-300">Holistic chiropractic care represents a fundamental shift in how we approach health and wellness. Unlike traditional medical approaches that often focus on treating isolated symptoms with medication, holistic chiropractic care examines the entire body as an interconnected system. This approach recognizes that misalignment in one area of the spine can affect nerve function, muscle tension, and overall health throughout the entire body.</p>
+            
+            <p class="mb-4 leading-relaxed text-gray-300">The philosophy behind holistic chiropractic care is rooted in the understanding that the body has an innate ability to heal itself when properly aligned. When vertebrae become misaligned—a condition called subluxation—they can interfere with nerve function, restrict blood flow, and create pain and dysfunction. By carefully realigning the spine and addressing tension throughout the entire body, chiropractors help restore the body's natural healing capacity.</p>
+
+            <h3 class="text-2xl font-medium mt-6 mb-3 text-white">The Difference Between Traditional and Holistic Chiropractic Care</h3>
+            
+            <p class="mb-4 leading-relaxed text-gray-300">Traditional chiropractic care often focuses primarily on spinal adjustments to address specific complaints. While this approach can provide relief, holistic chiropractic care takes a broader perspective. Practitioners like those at The Shift Chiropractic perform comprehensive assessments that consider your overall health, lifestyle, stress levels, posture habits, and wellness goals. This comprehensive evaluation allows for personalized treatment plans that address not just your immediate pain, but the underlying factors contributing to your condition.</p>
+
+            <h2 class="text-3xl font-semibold mt-8 mb-4 text-white">The Science Behind Full-Body Adjustments</h2>
+            
+            <p class="mb-4 leading-relaxed text-gray-300">One of the key components of holistic chiropractic care is the full-body adjustment. This hands-on technique goes far beyond simple spinal manipulation. During a comprehensive full-body adjustment, skilled chiropractors assess and treat misalignments throughout the entire skeletal system, including the cervical spine (neck), thoracic spine (mid-back), lumbar spine (lower back), sacrum, and extremities.</p>
+
+            <h3 class="text-2xl font-medium mt-6 mb-3 text-white">How Full-Body Adjustments Work</h3>
+            
+            <p class="mb-4 leading-relaxed text-gray-300">When vertebrae become misaligned, they can compress nerves and restrict the flow of cerebrospinal fluid, which is essential for nervous system function. Full-body adjustments use precise, controlled force applied at specific angles to gently realign vertebrae and restore proper nerve function. This process not only relieves pain but also improves communication between the brain and body, enhancing overall health and wellness.</p>
+
+            <p class="mb-4 leading-relaxed text-gray-300">The benefits of proper spinal alignment extend throughout your entire body. When nerves are no longer compressed, they can function optimally, improving organ function, boosting immune response, enhancing circulation, and promoting better sleep. Many patients report improvements in digestion, energy levels, and overall vitality after receiving full-body adjustments.</p>
+
+            <h2 class="text-3xl font-semibold mt-8 mb-4 text-white">Key Benefits of Holistic Chiropractic Care</h2>
+            
+            <h3 class="text-2xl font-medium mt-6 mb-3 text-white">Pain Relief and Management</h3>
+            
+            <p class="mb-4 leading-relaxed text-gray-300">One of the most immediate benefits of chiropractic care is pain relief. Whether you're suffering from acute pain from an injury or chronic pain that's plagued you for years, holistic chiropractic treatment can provide significant relief. By addressing the underlying cause of your pain rather than just masking symptoms with medication, chiropractic care offers long-lasting results. Many patients experience dramatic pain reduction within the first few sessions, with continued improvement as treatment progresses.</p>
+
+            <h3 class="text-2xl font-medium mt-6 mb-3 text-white">Improved Posture and Alignment</h3>
+            
+            <p class="mb-4 leading-relaxed text-gray-300">In our modern world, poor posture has become epidemic. Hours spent hunched over computers, looking down at phones, and sitting in uncomfortable chairs contribute to spinal misalignment and postural dysfunction. Holistic chiropractic care helps correct these postural issues through adjustments and personalized recommendations for ergonomics and exercises. Better posture not only reduces pain but also improves breathing, digestion, and confidence.</p>
+
+            <h3 class="text-2xl font-medium mt-6 mb-3 text-white">Enhanced Mobility and Flexibility</h3>
+            
+            <p class="mb-4 leading-relaxed text-gray-300">When your spine is properly aligned and tension is released from muscles and joints, your range of motion improves dramatically. Patients often report being able to turn their head more freely, bend without discomfort, and move with greater ease after chiropractic treatment. This improved mobility is particularly beneficial for athletes, active individuals, and anyone who wants to maintain their independence and quality of life as they age.</p>
+
+            <h3 class="text-2xl font-medium mt-6 mb-3 text-white">Better Sleep Quality</h3>
+            
+            <p class="mb-4 leading-relaxed text-gray-300">Pain and misalignment are common culprits behind sleep problems. When your spine is properly aligned and your nervous system is functioning optimally, many patients experience significant improvements in sleep quality. Better sleep leads to improved healing, better mood, enhanced cognitive function, and overall better health. Many of our patients report sleeping deeper and waking more refreshed after beginning chiropractic care.</p>
+
+            <h3 class="text-2xl font-medium mt-6 mb-3 text-white">Stress Reduction and Improved Mental Health</h3>
+            
+            <p class="mb-4 leading-relaxed text-gray-300">The connection between physical health and mental well-being is profound. Chronic pain and physical tension contribute to stress and anxiety. By relieving physical tension and pain, chiropractic care helps reduce stress levels. Additionally, proper spinal alignment improves nervous system function, which can enhance mood and emotional resilience. Many patients report feeling more relaxed, focused, and emotionally balanced after treatment.</p>
+
+            <h3 class="text-2xl font-medium mt-6 mb-3 text-white">Enhanced Athletic Performance</h3>
+            
+            <p class="mb-4 leading-relaxed text-gray-300">Athletes at all levels benefit tremendously from holistic chiropractic care. Proper spinal alignment improves nervous system function, which enhances coordination, balance, and proprioception. Better alignment also reduces the risk of injury and speeds recovery from sports-related strains and sprains. Many professional and amateur athletes credit chiropractic care with improving their performance and preventing injuries.</p>
+
+            <h2 class="text-3xl font-semibold mt-8 mb-4 text-white">Conditions Treated by Holistic Chiropractic Care</h2>
+            
+            <p class="mb-4 leading-relaxed text-gray-300">Holistic chiropractic care can effectively address a wide range of conditions. Here are some of the most common issues our patients come to us for:</p>
+
+            <ul class="list-disc list-inside mb-6 space-y-2 text-gray-300">
+                <li class="text-gray-300">Chronic back pain and lower back pain</li>
+                <li class="text-gray-300">Neck pain and cervical spine issues</li>
+                <li class="text-gray-300">Headaches and migraines</li>
+                <li class="text-gray-300">Sciatica and radiating leg pain</li>
+                <li class="text-gray-300">Whiplash injuries from car accidents</li>
+                <li class="text-gray-300">Sports injuries and strain</li>
+                <li class="text-gray-300">Carpal tunnel syndrome</li>
+                <li class="text-gray-300">Frozen shoulder and rotator cuff issues</li>
+                <li class="text-gray-300">Postural dysfunction and poor alignment</li>
+                <li class="text-gray-300">General wellness and preventative care</li>
+            </ul>
+
+            <h2 class="text-3xl font-semibold mt-8 mb-4 text-white">The Importance of Personalized Treatment Plans</h2>
+            
+            <p class="mb-4 leading-relaxed text-gray-300">Every person is unique, and their chiropractic care should reflect that reality. At The Shift Chiropractic, we don't believe in one-size-fits-all treatment. Instead, we take time to thoroughly understand each patient's condition, health history, lifestyle, and wellness goals. This comprehensive assessment allows us to create personalized treatment plans that address your specific needs.</p>
+
+            <p class="mb-4 leading-relaxed text-gray-300">A personalized treatment plan might include spinal adjustments, soft tissue therapy, corrective exercises, ergonomic recommendations, and lifestyle modifications. By addressing all factors contributing to your condition, we can achieve better results and help you maintain your improvements long-term. This comprehensive approach is what sets holistic chiropractic care apart from traditional approaches that focus narrowly on symptom relief.</p>
+
+            <h2 class="text-3xl font-semibold mt-8 mb-4 text-white">What to Expect During Your First Chiropractic Visit</h2>
+            
+            <p class="mb-4 leading-relaxed text-gray-300">If you're considering chiropractic care for the first time, understanding what to expect can help ease any concerns. Your first visit to a holistic chiropractic clinic like The Shift will typically include:</p>
+
+            <h3 class="text-2xl font-medium mt-6 mb-3 text-white">Comprehensive Consultation</h3>
+            
+            <p class="mb-4 leading-relaxed text-gray-300">Your chiropractor will spend time discussing your health history, current symptoms, lifestyle habits, work environment, exercise routines, and wellness goals. This detailed conversation helps the practitioner understand the full context of your condition.</p>
+
+            <h3 class="text-2xl font-medium mt-6 mb-3 text-white">Physical Examination</h3>
+            
+            <p class="mb-4 leading-relaxed text-gray-300">A thorough physical examination will assess your posture, range of motion, muscle strength, and neurological function. Your chiropractor may palpate your spine to identify misalignments and areas of tension.</p>
+
+            <h3 class="text-2xl font-medium mt-6 mb-3 text-white">Diagnostic Imaging</h3>
+            
+            <p class="mb-4 leading-relaxed text-gray-300">X-rays or other imaging studies may be taken to get a clear picture of your spinal alignment and identify any structural issues that need to be addressed.</p>
+
+            <h3 class="text-2xl font-medium mt-6 mb-3 text-white">Treatment Plan Development</h3>
+            
+            <p class="mb-4 leading-relaxed text-gray-300">Based on the findings from your consultation and examination, your chiropractor will develop a personalized treatment plan outlining the recommended frequency and duration of care, specific techniques that will be used, and any at-home recommendations.</p>
+
+            <h2 class="text-3xl font-semibold mt-8 mb-4 text-white">Combining Chiropractic Care with Other Wellness Practices</h2>
+            
+            <p class="mb-4 leading-relaxed text-gray-300">Holistic chiropractic care works best as part of a comprehensive wellness approach. Many patients enhance their chiropractic treatment with complementary practices:</p>
+
+            <ul class="list-disc list-inside mb-6 space-y-2 text-gray-300">
+                <li class="text-gray-300">Regular exercise and stretching routines</li>
+                <li class="text-gray-300">Proper nutrition and healthy eating habits</li>
+                <li class="text-gray-300">Stress management and meditation</li>
+                <li class="text-gray-300">Ergonomic improvements in work and home environments</li>
+                <li class="text-gray-300">Adequate sleep and rest</li>
+                <li class="text-gray-300">Physical therapy exercises</li>
+                <li class="text-gray-300">Massage therapy and soft tissue work</li>
+            </ul>
+
+            <h2 class="text-3xl font-semibold mt-8 mb-4 text-white">Why Choose The Shift Chiropractic in Oakland</h2>
+            
+            <p class="mb-4 leading-relaxed text-gray-300">The Shift Chiropractic stands out as Oakland's premier chiropractic clinic for several compelling reasons. We're committed to providing the highest quality holistic chiropractic care with a genuine focus on patient wellness and satisfaction.</p>
+
+            <h3 class="text-2xl font-medium mt-6 mb-3 text-white">Extended Appointment Times</h3>
+            
+            <p class="mb-4 leading-relaxed text-gray-300">Unlike many chiropractic clinics that rush through appointments, we dedicate extended time to each patient. This allows us to thoroughly assess your condition, address all your concerns, and provide comprehensive treatment that makes a real difference.</p>
+
+            <h3 class="text-2xl font-medium mt-6 mb-3 text-white">Seven Days a Week Availability</h3>
+            
+            <p class="mb-4 leading-relaxed text-gray-300">We understand that your schedule is important. That's why we're open seven days a week, including weekends and holidays. Whether you need a quick adjustment or a comprehensive treatment session, we're available when you need us.</p>
+
+            <h3 class="text-2xl font-medium mt-6 mb-3 text-white">Proven Results</h3>
+            
+            <p class="mb-4 leading-relaxed text-gray-300">Our track record speaks for itself. With a 95% patient satisfaction rate and hundreds of success stories, we've earned a reputation as Oakland's most trusted chiropractic clinic. Our patients consistently report significant improvements in pain, mobility, and overall quality of life.</p>
+
+            <h3 class="text-2xl font-medium mt-6 mb-3 text-white">Expert Practitioners</h3>
+            
+            <p class="mb-4 leading-relaxed text-gray-300">Our team of experienced chiropractors combines extensive training with genuine compassion for patient care. With over a decade of combined experience, we have the expertise to handle complex cases and deliver exceptional results.</p>
+
+            <h2 class="text-3xl font-semibold mt-8 mb-4 text-white">Getting Started with Your Wellness Journey</h2>
+            
+            <p class="mb-4 leading-relaxed text-gray-300">If you've been suffering from pain, poor posture, or other health issues, holistic chiropractic care may be exactly what you need. The first step is scheduling a consultation with a qualified chiropractor who can assess your condition and discuss your options. At The Shift Chiropractic, we're ready to help you begin your journey toward better health and wellness.</p>
+
+            <p class="mb-6 leading-relaxed text-gray-300">Don't let pain and dysfunction continue to impact your quality of life. Contact The Shift Chiropractic today to schedule your first appointment. Our friendly, knowledgeable team is ready to answer your questions and help you take the first step toward the vibrant, pain-free life you deserve. With our commitment to holistic care, personalized treatment plans, and proven results, we're confident that we can help you achieve your wellness goals and experience the transformative benefits of quality chiropractic care.</p>
+
+            <div class="bg-gray-800 rounded-lg p-8 mt-8 text-center">
+                <p class="text-lg mb-6 text-gray-300">Ready to experience the benefits of holistic chiropractic care?</p>
+                <a href="https://app.acuityscheduling.com/schedule.php?owner=13033735" class="primary-btn text-lg">
+                    <i class="fas fa-calendar-check"></i>
+                    Schedule Your Appointment Today
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-gray-800 py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full" style="background-color: var(--primary);"></div>
+                        <span class="font-bold text-lg">The Shift</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        Oakland's premier chiropractic clinic dedicated to holistic wellness and personalized care.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors duration-300" aria-label="Facebook">
+                            <i class="fab fa-facebook-f text-gray-400"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors duration-300" aria-label="Instagram">
+                            <i class="fab fa-instagram text-gray-400"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors duration-300" aria-label="Twitter">
+                            <i class="fab fa-twitter text-gray-400"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-white mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="https://ChiroTrack.github.io/the-shift-chiropractic-holistic-chiropractic-care-best-chiropractor-in-oakland-2025-11-09-y17kg#features" class="text-gray-400 hover:text-white transition-colors duration-300">Features</a></li>
+                        <li><a href="https://ChiroTrack.github.io/the-shift-chiropractic-holistic-chiropractic-care-best-chiropractor-in-oakland-2025-11-09-y17kg#benefits" class="text-gray-400 hover:text-white transition-colors duration-300">Benefits</a></li>
+                        <li><a href="https://ChiroTrack.github.io/the-shift-chiropractic-holistic-chiropractic-care-best-chiropractor-in-oakland-2025-11-09-y17kg#about" class="text-gray-400 hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="https://ChiroTrack.github.io/the-shift-chiropractic-holistic-chiropractic-care-best-chiropractor-in-oakland-2025-11-09-y17kg#testimonials" class="text-gray-400 hover:text-white transition-colors duration-300">Testimonials</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="font-bold text-white mb-6">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Spinal Adjustments</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Sports Injury Care</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Wellness Programs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Preventative Care</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-bold text-white mb-6">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-envelope text-[#FF5A5F]"></i>
+                            <a href="mailto:Theshiftchiropractic@gmail.com" class="text-gray-400 hover:text-white transition-colors duration-300">Theshiftchiropractic@gmail.com</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-phone text-[#FF5A5F]"></i>
+                            <span class="text-gray-400">(510) 555-0123</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-map-marker-alt text-[#FF5A5F]"></i>
+                            <span class="text-gray-400">Oakland, CA</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+                    <p class="text-gray-400 text-sm">
+                        &copy; 2025 The Shift Chiropractic. All rights reserved.
+                    </p>
+                    <div class="flex gap-6 justify-start md:justify-end">
+                        <a href="privacy.html" class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Privacy Policy</a>
+                        <a href="terms.html" class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Terms of Service</a>
+                        <a href="blog.html" class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Blog</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.querySelector('header nav .mobile-menu-button');
+            const mobileMenu = document.querySelector('header nav .mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = mobileMenuButton.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-times');
+                    }
+                });
+
+                const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+                mobileMenuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        const icon = mobileMenuButton.querySelector('i');
+                        if (icon) {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    });
+                });
+            }
+
+            // FAQ Accordion Toggle
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                if (question) {
+                    question.addEventListener('click', () => {
+                        const answer = item.querySelector('.faq-answer');
+                        const isOpen = !answer.classList.contains('hidden');
+                        
+                        // Close all other FAQ items
+                        faqItems.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                otherItem.querySelector('.faq-answer')?.classList.add('hidden');
+                                otherItem.querySelector('.faq-icon')?.classList.remove('rotate-180');
+                            }
+                        });
+                        
+                        // Toggle current item
+                        answer?.classList.toggle('hidden');
+                        item.querySelector('.faq-icon')?.classList.toggle('rotate-180');
+                    });
+                }
+            });
+
+            // Smooth Scroll for Anchor Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && href.length > 1) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
