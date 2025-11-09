@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Shift Chiropractic Blog - Expert insights on holistic chiropractic care, wellness tips, and pain relief strategies. Learn about full-body adjustments and optimal health.">
+    <meta name="keywords" content="chiropractic blog, holistic health, wellness tips, pain relief, spinal health, Oakland chiropractor">
+    <meta name="author" content="The Shift Chiropractic">
+    <title>Blog - The Shift Chiropractic | Holistic Chiropractic Care Insights</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        :root {
+            --primary: #FF5A5F;
+            --secondary: #1A1A1A;
+            --accent: #FFD166;
+        }
+        
+        .primary-btn {
+            background-color: var(--primary);
+            color: white;
+            border-radius: 9999px;
+            padding: 12px 32px;
+            font-weight: 600;
+            transition: all 300ms ease-out;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .primary-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(255, 90, 95, 0.3);
+            filter: brightness(1.1);
+        }
+        
+        .primary-btn:active {
+            transform: scale(0.98);
+        }
+        
+        .card-base {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 24px;
+            transition: all 300ms ease-out;
+        }
+        
+        .card-base:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 90, 95, 0.3);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #FF5A5F 0%, #FFD166 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-heading {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: white;
+        }
+        
+        .section-subheading {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+        
+        .accent-line {
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary);
+            border-radius: 2px;
+            margin-bottom: 16px;
+        }
+        
+        .blog-featured-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 90, 95, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            transition: all 300ms ease-out;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .blog-featured-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(255, 90, 95, 0.2);
+            border-color: rgba(255, 90, 95, 0.5);
+        }
+        
+        .blog-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 24px;
+            transition: all 300ms ease-out;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .blog-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 90, 95, 0.3);
+        }
+        
+        .blog-date {
+            font-size: 0.875rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .blog-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        
+        .blog-excerpt {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .blog-featured-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+        
+        .blog-featured-excerpt {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+        
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(255, 90, 95, 0.1) 0%, rgba(255, 209, 102, 0.05) 100%);
+        }
+        
+        @media (max-width: 768px) {
+            .section-heading {
+                font-size: 2rem;
+            }
+            
+            .section-subheading {
+                font-size: 1rem;
+            }
+            
+            .blog-featured-card {
+                padding: 24px;
+            }
+            
+            .blog-featured-title {
+                font-size: 1.75rem;
+            }
+            
+            .blog-featured-excerpt {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white smooth-scroll">
+    <!-- Header & Navigation -->
+    <header class="w-full">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <div class="flex items-center justify-between w-full">
+                <!-- Logo -->
+                <a href="https://ChiroTrack.github.io/the-shift-chiropractic-holistic-chiropractic-care-best-chiropractor-in-oakland-2025-11-09-y17kg" class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full" style="background-color: var(--primary);"></div>
+                    <span class="font-bold text-xl hidden sm:block">The Shift</span>
+                </a>
+                
+                <!-- Back Link -->
+                <a href="https://ChiroTrack.github.io/the-shift-chiropractic-holistic-chiropractic-care-best-chiropractor-in-oakland-2025-11-09-y17kg" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2">
+                    <i class="fas fa-arrow-left"></i>
+                    <span class="hidden sm:inline">Back</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Blog Header Section -->
+    <section class="hero-gradient pt-20 pb-16 md:pt-32 md:pb-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center">
+                <div class="accent-line mx-auto"></div>
+                <h1 class="section-heading mb-6">Our Blog</h1>
+                <p class="section-subheading max-w-3xl mx-auto">
+                    Discover expert insights, wellness tips, and evidence-based information about holistic chiropractic care, pain relief strategies, and optimal health restoration.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Purpose Section -->
+    <section class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
+        <div class="max-w-4xl mx-auto">
+            <div class="card-base">
+                <h2 class="text-2xl font-bold mb-4 text-white">Welcome to The Shift Chiropractic Blog</h2>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Our blog is dedicated to empowering you with knowledge about chiropractic health, wellness strategies, and the science behind optimal body function. Whether you're dealing with chronic pain, recovering from an injury, or simply seeking to enhance your overall wellness, you'll find valuable insights and practical advice here.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    Explore articles on topics including spinal health, the benefits of holistic chiropractic care, lifestyle optimization, injury prevention, and real patient success stories. Our team of experienced practitioners shares evidence-based information to help you make informed decisions about your health journey.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Blog Post -->
+    <section class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-800">
+        <div class="max-w-4xl mx-auto">
+            <div class="mb-8">
+                <h2 class="section-heading mb-12">Featured Article</h2>
+            </div>
+            
+            <div class="blog-featured-card">
+                <div class="blog-date">
+                    <i class="fas fa-calendar-alt"></i> Published on November 9, 2025
+                </div>
+                <h3 class="blog-featured-title">Understanding the Benefits of Holistic Chiropractic Care: A Complete Guide to Full-Body Wellness</h3>
+                
+                <div class="blog-featured-excerpt">
+                    <p class="mb-4">
+                        Discover how holistic chiropractic care transforms your health through full-body wellness. This comprehensive guide explores the science behind spinal adjustments and their profound impact on pain relief, mobility, and overall vitality. Learn why personalized treatment plans address root causes rather than just symptoms, benefiting athletes, desk workers, and anyone seeking lasting relief.
+                    </p>
+                    <p class="mb-4">
+                        From improved posture and better sleep to enhanced mental clarity, holistic chiropractic care offers interconnected healing. The Shift Chiropractic in Oakland provides expert, compassionate care seven days weekly, combining hands-on adjustments with personalized wellness strategies. Experience the difference when practitioners dedicate genuine time to understanding your unique needs and goals for optimal health restoration.
+                    </p>
+                </div>
+                
+                <a href="https://ChiroTrack.github.io/the-shift-chiropractic-holistic-chiropractic-care-best-chiropractor-in-oakland-2025-11-09-y17kg/blog/understanding-the-benefits-of-holistic-chiropracti.html" class="primary-btn w-fit">
+                    <i class="fas fa-arrow-right"></i>
+                    Read Full Article
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- More Blog Posts Section -->
+    <section class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-12">
+                <h2 class="section-heading mb-4">More Articles</h2>
+                <p class="section-subheading">Coming Soon</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Placeholder Cards -->
+                <div class="blog-card">
+                    <div class="w-full h-40 rounded-lg" style="background-color: rgba(255, 90, 95, 0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                        <i class="fas fa-pen-fancy text-4xl" style="color: var(--primary); opacity: 0.3;"></i>
+                    </div>
+                    <div class="blog-date">Coming Soon</div>
+                    <h3 class="blog-title">New Article Coming</h3>
+                    <p class="blog-excerpt">
+                        Stay tuned for more insightful articles about chiropractic health, wellness strategies, and pain relief techniques.
+                    </p>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="w-full h-40 rounded-lg" style="background-color: rgba(255, 209, 102, 0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                        <i class="fas fa-pen-fancy text-4xl" style="color: var(--accent); opacity: 0.3;"></i>
+                    </div>
+                    <div class="blog-date">Coming Soon</div>
+                    <h3 class="blog-title">New Article Coming</h3>
+                    <p class="blog-excerpt">
+                        Explore expert insights and practical wellness tips from The Shift Chiropractic's experienced practitioners.
+                    </p>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="w-full h-40 rounded-lg" style="background-color: rgba(255, 90, 95, 0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                        <i class="fas fa-pen-fancy text-4xl" style="color: var(--primary); opacity: 0.3;"></i>
+                    </div>
+                    <div class="blog-date">Coming Soon</div>
+                    <h3 class="blog-title">New Article Coming</h3>
+                    <p class="blog-excerpt">
+                        Learn about the latest developments in chiropractic care and holistic health optimization.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1576091160550-112173f7f869?w=1200&h=600&fit=crop');">
+        <div class="absolute inset-0 bg-black opacity-60"></div>
+        <div class="max-w-4xl mx-auto relative z-10 text-center">
+            <h2 class="section-heading mb-6">Ready to Start Your Wellness Journey?</h2>
+            <p class="section-subheading mb-8 max-w-2xl mx-auto">
+                Apply the insights from our blog to your life. Schedule your consultation with The Shift Chiropractic today and experience personalized care designed for your unique health goals.
+            </p>
+            <a href="https://app.acuityscheduling.com/schedule.php?owner=13033735" class="primary-btn text-lg">
+                <i class="fas fa-calendar-check"></i>
+                Book Your Appointment
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-gray-800 py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full" style="background-color: var(--primary);"></div>
+                        <span class="font-bold text-lg">The Shift</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        Oakland's premier chiropractic clinic dedicated to holistic wellness and personalized care.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors duration-300" aria-label="Facebook">
+                            <i class="fab fa-facebook-f text-gray-400"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors duration-300" aria-label="Instagram">
+                            <i class="fab fa-instagram text-gray-400"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors duration-300" aria-label="Twitter">
+                            <i class="fab fa-twitter text-gray-400"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-white mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="https://ChiroTrack.github.io/the-shift-chiropractic-holistic-chiropractic-care-best-chiropractor-in-oakland-2025-11-09-y17kg#features" class="text-gray-400 hover:text-white transition-colors duration-300">Features</a></li>
+                        <li><a href="https://ChiroTrack.github.io/the-shift-chiropractic-holistic-chiropractic-care-best-chiropractor-in-oakland-2025-11-09-y17kg#benefits" class="text-gray-400 hover:text-white transition-colors duration-300">Benefits</a></li>
+                        <li><a href="https://ChiroTrack.github.io/the-shift-chiropractic-holistic-chiropractic-care-best-chiropractor-in-oakland-2025-11-09-y17kg#about" class="text-gray-400 hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="https://ChiroTrack.github.io/the-shift-chiropractic-holistic-chiropractic-care-best-chiropractor-in-oakland-2025-11-09-y17kg#testimonials" class="text-gray-400 hover:text-white transition-colors duration-300">Testimonials</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="font-bold text-white mb-6">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Spinal Adjustments</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Sports Injury Care</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Wellness Programs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Preventative Care</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-bold text-white mb-6">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-envelope text-[#FF5A5F]"></i>
+                            <a href="mailto:Theshiftchiropractic@gmail.com" class="text-gray-400 hover:text-white transition-colors duration-300">Theshiftchiropractic@gmail.com</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-phone text-[#FF5A5F]"></i>
+                            <span class="text-gray-400">(510) 555-0123</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-map-marker-alt text-[#FF5A5F]"></i>
+                            <span class="text-gray-400">Oakland, CA</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+                    <p class="text-gray-400 text-sm">
+                        &copy; 2025 The Shift Chiropractic. All rights reserved.
+                    </p>
+                    <div class="flex gap-6 justify-start md:justify-end">
+                        <a href="privacy.html" class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Privacy Policy</a>
+                        <a href="terms.html" class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Terms of Service</a>
+                        <a href="blog.html" class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Blog</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth Scroll for Anchor Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && href.length > 1) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
