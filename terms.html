@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Terms of Service - The Shift Chiropractic. Read our complete terms and conditions for using our services.">
+    <meta name="keywords" content="terms of service, legal, chiropractic, Oakland">
+    <meta name="author" content="The Shift Chiropractic">
+    <title>Terms of Service - The Shift Chiropractic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        :root {
+            --primary: #FF5A5F;
+            --secondary: #1A1A1A;
+            --accent: #FFD166;
+        }
+        
+        .primary-btn {
+            background-color: var(--primary);
+            color: white;
+            border-radius: 9999px;
+            padding: 12px 32px;
+            font-weight: 600;
+            transition: all 300ms ease-out;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .primary-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(255, 90, 95, 0.3);
+            filter: brightness(1.1);
+        }
+        
+        .primary-btn:active {
+            transform: scale(0.98);
+        }
+        
+        .card-base {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 24px;
+            transition: all 300ms ease-out;
+        }
+        
+        .card-base:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 90, 95, 0.3);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #FF5A5F 0%, #FFD166 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-heading {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: white;
+        }
+        
+        .section-subheading {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+        
+        .accent-line {
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary);
+            border-radius: 2px;
+            margin-bottom: 16px;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 24px 0;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.125rem;
+            color: white;
+            transition: color 300ms ease-out;
+            user-select: none;
+        }
+        
+        .faq-question:hover {
+            color: var(--primary);
+        }
+        
+        .faq-icon {
+            flex-shrink: 0;
+            transition: transform 300ms ease-out;
+            width: 24px;
+            height: 24px;
+            color: var(--primary);
+        }
+        
+        .faq-answer {
+            margin-top: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            font-size: 1rem;
+            animation: slideDown 300ms ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 90, 95, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 300ms ease-out;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(255, 90, 95, 0.15);
+            border-color: rgba(255, 90, 95, 0.4);
+        }
+        
+        .star-rating {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 16px;
+        }
+        
+        .star {
+            color: var(--accent);
+            font-size: 1rem;
+        }
+        
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(255, 90, 95, 0.1) 0%, rgba(255, 209, 102, 0.05) 100%);
+        }
+        
+        .terms-content {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+        }
+        
+        .terms-content h2 {
+            color: white;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .terms-content h3 {
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 600;
+            font-size: 1.125rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .terms-content p {
+            margin-bottom: 1rem;
+        }
+        
+        .terms-content ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .terms-content li {
+            margin-bottom: 0.5rem;
+            list-style-type: disc;
+        }
+        
+        @media (max-width: 768px) {
+            .section-heading {
+                font-size: 2rem;
+            }
+            
+            .section-subheading {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white smooth-scroll">
+    <!-- Header & Navigation -->
+    <header class="w-full">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <div class="flex items-center justify-between w-full">
+                <!-- Logo -->
+                <a href="https://ChiroTrack.github.io/the-shift-chiropractic-holistic-chiropractic-care-best-chiropractor-in-oakland-2025-11-09-y17kg" class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full" style="background-color: var(--primary);"></div>
+                    <span class="font-bold text-xl hidden sm:block">The Shift</span>
+                </a>
+                
+                <!-- Back Link -->
+                <a href="https://ChiroTrack.github.io/the-shift-chiropractic-holistic-chiropractic-care-best-chiropractor-in-oakland-2025-11-09-y17kg" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2">
+                    <i class="fas fa-arrow-left"></i>
+                    <span class="hidden sm:block">Back</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-20 pb-16 md:pt-32 md:pb-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex flex-col gap-6">
+                <div>
+                    <div class="accent-line"></div>
+                    <h1 class="section-heading mb-4">
+                        Terms of Service
+                    </h1>
+                    <p class="section-subheading">
+                        Please read these terms and conditions carefully before using The Shift Chiropractic services.
+                    </p>
+                </div>
+                <p class="text-gray-400 text-sm">
+                    Last updated: January 2025
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms Content Section -->
+    <section class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-900">
+        <div class="max-w-4xl mx-auto terms-content">
+            <!-- Introduction -->
+            <div class="mb-12">
+                <h2>1. Introduction and Acceptance of Terms</h2>
+                <p>
+                    Welcome to The Shift Chiropractic ("Company," "we," "us," or "our"). These Terms of Service ("Terms") govern your use of our website, mobile applications, and services (collectively, the "Services"). By accessing, browsing, or using our Services in any manner, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use our Services.
+                </p>
+                <p>
+                    The Shift Chiropractic reserves the right to modify these Terms at any time. Changes will be effective immediately upon posting to our website. Your continued use of our Services following any modifications constitutes your acceptance of the updated Terms. We encourage you to review these Terms periodically to stay informed of any changes.
+                </p>
+            </div>
+
+            <!-- User Agreements -->
+            <div class="mb-12">
+                <h2>2. User Agreements and Eligibility</h2>
+                <p>
+                    By using our Services, you represent and warrant that:
+                </p>
+                <ul>
+                    <li>You are at least 18 years of age or the legal age of majority in your jurisdiction</li>
+                    <li>You have the legal capacity to enter into binding agreements</li>
+                    <li>You are not prohibited by law from using our Services</li>
+                    <li>All information you provide is accurate, current, and complete</li>
+                    <li>You will not use our Services for any unlawful purposes or in violation of any applicable laws</li>
+                    <li>You will comply with all applicable local, state, and federal laws and regulations</li>
+                </ul>
+                <p>
+                    If you are under 18 years of age, you may only use our Services with the consent and supervision of a parent or legal guardian. Parents or guardians who permit minors to use our Services are responsible for monitoring and guiding their use and agree to be bound by these Terms on behalf of the minor.
+                </p>
+                <p>
+                    We reserve the right to refuse service, terminate accounts, or cancel orders at our sole discretion if we believe you have violated these Terms or applicable laws.
+                </p>
+            </div>
+
+            <!-- Use of Services -->
+            <div class="mb-12">
+                <h2>3. Description of Services</h2>
+                <p>
+                    The Shift Chiropractic provides chiropractic care services, including but not limited to spinal adjustments, wellness consultations, sports injury treatment, and preventative care programs. Our Services are provided by licensed chiropractors and healthcare professionals in accordance with all applicable laws and regulations.
+                </p>
+                <p>
+                    All services are provided on an as-is basis. While we strive to provide high-quality care, we do not guarantee specific health outcomes or results. Individual results may vary based on factors including but not limited to your health condition, compliance with treatment recommendations, lifestyle factors, and overall health status.
+                </p>
+                <p>
+                    Scheduling and booking services are available through our website, mobile applications, and phone. By booking an appointment, you agree to provide accurate information and to notify us of any cancellations or changes as soon as possible.
+                </p>
+            </div>
+
+            <!-- Acceptable Use -->
+            <div class="mb-12">
+                <h2>4. Acceptable Use Policy</h2>
+                <p>
+                    You agree not to use our Services in any manner that:
+                </p>
+                <ul>
+                    <li>Violates any applicable laws, regulations, or these Terms</li>
+                    <li>Infringes upon the intellectual property rights of The Shift Chiropractic or third parties</li>
+                    <li>Transmits viruses, malware, or any code of a destructive nature</li>
+                    <li>Harasses, threatens, abuses, or defames any individual or entity</li>
+                    <li>Attempts to gain unauthorized access to our systems or networks</li>
+                    <li>Interferes with or disrupts the integrity or performance of our Services</li>
+                    <li>Impersonates any person or entity</li>
+                    <li>Engages in spam, phishing, or any deceptive practices</li>
+                    <li>Collects or tracks personal information of others without consent</li>
+                    <li>Attempts to reverse engineer, decompile, or discover source code or trade secrets</li>
+                </ul>
+                <p>
+                    Violation of this Acceptable Use Policy may result in immediate termination of your access to our Services and may subject you to legal action.
+                </p>
+            </div>
+
+            <!-- Intellectual Property Rights -->
+            <div class="mb-12">
+                <h2>5. Intellectual Property Rights</h2>
+                <p>
+                    All content on our website and within our Services, including but not limited to text, graphics, logos, images, videos, audio, software, and code, is the exclusive property of The Shift Chiropractic or our licensors and is protected by applicable copyright, trademark, and other intellectual property laws.
+                </p>
+                <p>
+                    You are granted a limited, non-exclusive, non-transferable license to access and use our Services for personal, non-commercial purposes only. You may not reproduce, modify, distribute, transmit, display, or create derivative works from any content without our prior written permission.
+                </p>
+                <p>
+                    The Shift Chiropractic name and logo are registered trademarks. All other trademarks, service marks, and trade names are the property of their respective owners. Unauthorized use of any trademark or trade name is prohibited.
+                </p>
+            </div>
+
+            <!-- User-Generated Content -->
+            <div class="mb-12">
+                <h2>6. User-Generated Content</h2>
+                <p>
+                    If you submit, post, or display content on our Services (including testimonials, reviews, comments, or feedback), you grant The Shift Chiropractic a worldwide, non-exclusive, royalty-free license to use, reproduce, modify, and distribute such content.
+                </p>
+                <p>
+                    You represent and warrant that:
+                </p>
+                <ul>
+                    <li>You own or have the right to use all content you submit</li>
+                    <li>Your content does not infringe upon the rights of any third party</li>
+                    <li>Your content does not contain defamatory, obscene, or unlawful material</li>
+                    <li>You have obtained all necessary consents and permissions</li>
+                </ul>
+                <p>
+                    We reserve the right to remove any content that violates these Terms or applicable laws without notice or liability.
+                </p>
+            </div>
+
+            <!-- Medical Disclaimer -->
+            <div class="mb-12">
+                <h2>7. Medical Disclaimer</h2>
+                <p>
+                    The information provided through our Services is for educational and informational purposes only and does not constitute medical advice. It is not intended to diagnose, treat, cure, or prevent any disease or medical condition.
+                </p>
+                <p>
+                    Always consult with a qualified healthcare professional before beginning any new treatment, exercise program, or health regimen. The Shift Chiropractic is not responsible for any decisions you make based on information obtained through our Services.
+                </p>
+                <p>
+                    If you experience severe pain, numbness, weakness, or any concerning symptoms, seek immediate medical attention or contact emergency services. Do not rely solely on our Services for urgent medical conditions.
+                </p>
+            </div>
+
+            <!-- Limitation of Liability -->
+            <div class="mb-12">
+                <h2>8. Limitation of Liability</h2>
+                <p>
+                    TO THE FULLEST EXTENT PERMITTED BY LAW, THE SHIFT CHIROPRACTIC AND ITS OFFICERS, DIRECTORS, EMPLOYEES, AND AGENTS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, PUNITIVE, OR EXEMPLARY DAMAGES, INCLUDING BUT NOT LIMITED TO DAMAGES FOR LOSS OF PROFITS, GOODWILL, USE, DATA, OR OTHER INTANGIBLE LOSSES, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+                </p>
+                <p>
+                    OUR TOTAL LIABILITY TO YOU FOR ANY CLAIM ARISING OUT OF OR RELATING TO THESE TERMS OR OUR SERVICES SHALL NOT EXCEED THE AMOUNT YOU PAID TO US IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM, OR $100, WHICHEVER IS GREATER.
+                </p>
+                <p>
+                    Some jurisdictions do not allow the limitation or exclusion of liability for incidental or consequential damages, so the above limitation may not apply to you.
+                </p>
+            </div>
+
+            <!-- Disclaimer of Warranties -->
+            <div class="mb-12">
+                <h2>9. Disclaimer of Warranties</h2>
+                <p>
+                    OUR SERVICES ARE PROVIDED ON AN "AS-IS" AND "AS-AVAILABLE" BASIS WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMITTED BY LAW, THE SHIFT CHIROPRACTIC DISCLAIMS ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+                </p>
+                <p>
+                    WE DO NOT WARRANT THAT OUR SERVICES WILL BE UNINTERRUPTED, ERROR-FREE, SECURE, OR FREE FROM VIRUSES OR OTHER HARMFUL COMPONENTS. WE DO NOT GUARANTEE SPECIFIC HEALTH OUTCOMES OR RESULTS FROM OUR CHIROPRACTIC SERVICES.
+                </p>
+                <p>
+                    Your use of our Services is at your own risk. You are solely responsible for any damage to your computer, mobile device, or loss of data resulting from your use of our Services.
+                </p>
+            </div>
+
+            <!-- Indemnification -->
+            <div class="mb-12">
+                <h2>10. Indemnification</h2>
+                <p>
+                    You agree to indemnify, defend, and hold harmless The Shift Chiropractic and its officers, directors, employees, agents, and successors from and against any and all claims, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or relating to:
+                </p>
+                <ul>
+                    <li>Your use of our Services</li>
+                    <li>Your violation of these Terms</li>
+                    <li>Your violation of any applicable laws or regulations</li>
+                    <li>Your infringement of any third-party intellectual property rights</li>
+                    <li>Any content you submit or user-generated content</li>
+                    <li>Any claim that your use of our Services caused harm or damage</li>
+                </ul>
+                <p>
+                    We reserve the right to assume the exclusive defense of any claim subject to indemnification, in which case you agree to cooperate fully in our defense.
+                </p>
+            </div>
+
+            <!-- Privacy and Data Protection -->
+            <div class="mb-12">
+                <h2>11. Privacy and Data Protection</h2>
+                <p>
+                    Your use of our Services is also governed by our Privacy Policy, which is incorporated into these Terms by reference. Please review our Privacy Policy to understand our practices regarding the collection, use, and protection of your personal information.
+                </p>
+                <p>
+                    By using our Services, you consent to our collection, use, and disclosure of your information in accordance with our Privacy Policy and applicable data protection laws.
+                </p>
+                <p>
+                    We take the security of your personal health information seriously and implement appropriate safeguards to protect it. However, no method of transmission over the internet or electronic storage is completely secure. We cannot guarantee absolute security of your information.
+                </p>
+            </div>
+
+            <!-- Third-Party Links and Services -->
+            <div class="mb-12">
+                <h2>12. Third-Party Links and Services</h2>
+                <p>
+                    Our Services may contain links to third-party websites, applications, and services that are not operated by The Shift Chiropractic. These links are provided for your convenience only, and we do not endorse, control, or assume responsibility for the content, accuracy, or practices of third-party services.
+                </p>
+                <p>
+                    Your use of third-party services is subject to their own terms and conditions and privacy policies. We encourage you to review these policies before providing any personal information or using third-party services. We are not responsible for any harm or damages resulting from your use of third-party services.
+                </p>
+            </div>
+
+            <!-- Appointment Cancellation and No-Show Policy -->
+            <div class="mb-12">
+                <h2>13. Appointment Cancellation and No-Show Policy</h2>
+                <p>
+                    We understand that schedules can change. If you need to cancel or reschedule your appointment, please notify us as soon as possible. Cancellations made at least 24 hours in advance will not incur any charges.
+                </p>
+                <p>
+                    Cancellations or rescheduling requests made less than 24 hours before your appointment may be subject to a cancellation fee. No-shows (appointments you do not attend without prior notice) may result in a fee equal to the cost of your scheduled service.
+                </p>
+                <p>
+                    Repeated no-shows or cancellations may result in the termination of your appointment privileges. We reserve the right to require payment in advance for future appointments in such cases.
+                </p>
+            </div>
+
+            <!-- Payment Terms -->
+            <div class="mb-12">
+                <h2>14. Payment Terms</h2>
+                <p>
+                    Payment for services is due at the time of service unless other arrangements have been made. We accept various payment methods including cash, credit cards, and electronic transfers. Accepted credit cards are processed securely through our payment processor.
+                </p>
+                <p>
+                    All prices are subject to change without notice. Applicable taxes and fees will be added to your bill. If you have insurance, we will bill your insurance provider directly. You are responsible for any copays, deductibles, or amounts not covered by your insurance.
+                </p>
+                <p>
+                    If payment is not received by the due date, we may suspend services and refer your account to a collection agency. You will be responsible for any collection costs and legal fees associated with the collection of unpaid balances.
+                </p>
+            </div>
+
+            <!-- Termination of Services -->
+            <div class="mb-12">
+                <h2>15. Termination of Services</h2>
+                <p>
+                    The Shift Chiropractic reserves the right to terminate your access to our Services at any time, with or without cause, and with or without notice. Grounds for termination include but are not limited to:
+                </p>
+                <ul>
+                    <li>Violation of these Terms</li>
+                    <li>Non-payment of fees or services</li>
+                    <li>Abusive or threatening behavior toward staff or other patients</li>
+                    <li>Failure to follow medical advice or treatment protocols</li>
+                    <li>Any conduct we deem inappropriate or harmful</li>
+                </ul>
+                <p>
+                    Upon termination, your right to use our Services will immediately cease. We may retain your medical records and other information in accordance with applicable laws and regulations.
+                </p>
+            </div>
+
+            <!-- Governing Law and Jurisdiction -->
+            <div class="mb-12">
+                <h2>16. Governing Law and Jurisdiction</h2>
+                <p>
+                    These Terms are governed by and construed in accordance with the laws of the State of California, without regard to its conflict of law principles. Any legal action or proceeding arising out of or relating to these Terms or our Services shall be brought exclusively in the state or federal courts located in Alameda County, California.
+                </p>
+                <p>
+                    You agree to submit to the exclusive jurisdiction of these courts and waive any objection to venue or inconvenient forum. If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions shall continue in full force and effect.
+                </p>
+            </div>
+
+            <!-- Dispute Resolution and Arbitration -->
+            <div class="mb-12">
+                <h2>17. Dispute Resolution</h2>
+                <p>
+                    In the event of a dispute arising out of or relating to these Terms or our Services, you and The Shift Chiropractic agree to first attempt to resolve the matter through good-faith negotiation and discussion.
+                </p>
+                <p>
+                    If the dispute cannot be resolved through negotiation within thirty (30) days, either party may pursue legal remedies through the courts of Alameda County, California, as provided in Section 16 above.
+                </p>
+                <p>
+                    BY USING OUR SERVICES, YOU AND THE SHIFT CHIROPRACTIC AGREE THAT ANY AND ALL DISPUTES SHALL BE RESOLVED ON AN INDIVIDUAL BASIS AND NOT AS A CLASS ACTION, CLASS ARBITRATION, OR REPRESENTATIVE ACTION.
+                </p>
+            </div>
+
+            <!-- Severability -->
+            <div class="mb-12">
+                <h2>18. Severability</h2>
+                <p>
+                    If any provision of these Terms is found to be invalid, unlawful, or unenforceable by a court of competent jurisdiction, such provision shall be modified to the minimum extent necessary to make it valid and enforceable, or if such modification is not possible, the provision shall be severed from these Terms.
+                </p>
+                <p>
+                    The severance of any provision shall not affect the validity or enforceability of the remaining provisions, which shall continue in full force and effect.
+                </p>
+            </div>
+
+            <!-- Entire Agreement -->
+            <div class="mb-12">
+                <h2>19. Entire Agreement</h2>
+                <p>
+                    These Terms, together with our Privacy Policy and any other policies or agreements posted on our website, constitute the entire agreement between you and The Shift Chiropractic concerning your use of our Services and supersede all prior negotiations, understandings, and agreements, whether written or oral.
+                </p>
+                <p>
+                    If any part of these Terms is inconsistent with our Privacy Policy or other posted policies, the provision that provides greater protection to your rights shall apply.
+                </p>
+            </div>
+
+            <!-- Waiver -->
+            <div class="mb-12">
+                <h2>20. Waiver</h2>
+                <p>
+                    The failure of The Shift Chiropractic to enforce any provision of these Terms shall not constitute a waiver of that provision or any other provision. Any waiver must be in writing and signed by an authorized representative of The Shift Chiropractic to be valid and binding.
+                </p>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="mb-12">
+                <h2>21. Contact Information</h2>
+                <p>
+                    If you have any questions, concerns, or disputes regarding these Terms of Service or our Services, please contact us at:
+                </p>
+                <div class="bg-gray-800 rounded-lg p-6 mt-4 space-y-3">
+                    <div>
+                        <p class="font-semibold text-white">The Shift Chiropractic</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-envelope text-[#FF5A5F]"></i>
+                        <a href="mailto:Theshiftchiropractic@gmail.com" class="text-gray-300 hover:text-white transition-colors duration-300">Theshiftchiropractic@gmail.com</a>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-phone text-[#FF5A5F]"></i>
+                        <span class="text-gray-300">(510) 555-0123</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-map-marker-alt text-[#FF5A5F]"></i>
+                        <span class="text-gray-300">Oakland, CA</span>
+                    </div>
+                </div>
+                <p class="mt-6">
+                    We will make every effort to respond to your inquiry within ten (10) business days.
+                </p>
+            </div>
+
+            <!-- Acknowledgment -->
+            <div class="bg-gray-800 rounded-lg p-6 mt-12 border border-gray-700">
+                <h3>Acknowledgment</h3>
+                <p class="mt-4">
+                    By using The Shift Chiropractic's Services, you acknowledge that you have read these Terms of Service, understand them, and agree to be bound by all of their terms and conditions. If you do not agree to these Terms, you must discontinue use of our Services immediately.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-gray-800 py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full" style="background-color: var(--primary);"></div>
+                        <span class="font-bold text-lg">The Shift</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        Oakland's premier chiropractic clinic dedicated to holistic wellness and personalized care.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors duration-300" aria-label="Facebook">
+                            <i class="fab fa-facebook-f text-gray-400"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors duration-300" aria-label="Instagram">
+                            <i class="fab fa-instagram text-gray-400"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors duration-300" aria-label="Twitter">
+                            <i class="fab fa-twitter text-gray-400"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-white mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="https://ChiroTrack.github.io/the-shift-chiropractic-holistic-chiropractic-care-best-chiropractor-in-oakland-2025-11-09-y17kg#features" class="text-gray-400 hover:text-white transition-colors duration-300">Features</a></li>
+                        <li><a href="https://ChiroTrack.github.io/the-shift-chiropractic-holistic-chiropractic-care-best-chiropractor-in-oakland-2025-11-09-y17kg#benefits" class="text-gray-400 hover:text-white transition-colors duration-300">Benefits</a></li>
+                        <li><a href="https://ChiroTrack.github.io/the-shift-chiropractic-holistic-chiropractic-care-best-chiropractor-in-oakland-2025-11-09-y17kg#about" class="text-gray-400 hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="https://ChiroTrack.github.io/the-shift-chiropractic-holistic-chiropractic-care-best-chiropractor-in-oakland-2025-11-09-y17kg#testimonials" class="text-gray-400 hover:text-white transition-colors duration-300">Testimonials</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="font-bold text-white mb-6">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Spinal Adjustments</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Sports Injury Care</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Wellness Programs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Preventative Care</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-bold text-white mb-6">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-envelope text-[#FF5A5F]"></i>
+                            <a href="mailto:Theshiftchiropractic@gmail.com" class="text-gray-400 hover:text-white transition-colors duration-300">Theshiftchiropractic@gmail.com</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-phone text-[#FF5A5F]"></i>
+                            <span class="text-gray-400">(510) 555-0123</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-map-marker-alt text-[#FF5A5F]"></i>
+                            <span class="text-gray-400">Oakland, CA</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+                    <p class="text-gray-400 text-sm">
+                        &copy; 2025 The Shift Chiropractic. All rights reserved.
+                    </p>
+                    <div class="flex gap-6 justify-start md:justify-end">
+                        <a href="privacy.html" class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Privacy Policy</a>
+                        <a href="terms.html" class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Terms of Service</a>
+                        <a href="blog.html" class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Blog</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth Scroll for Anchor Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && href.length > 1) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
