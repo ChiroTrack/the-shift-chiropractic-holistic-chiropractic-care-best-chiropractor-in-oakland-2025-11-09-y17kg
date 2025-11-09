@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Shift Chiropractic - Best Chiropractor in Oakland, CA. Holistic chiropractic care with hands-on full body adjustments. Open 7 days a week.">
+    <meta name="keywords" content="chiropractor, Oakland, chiropractic care, holistic health, adjustments">
+    <meta name="author" content="The Shift Chiropractic">
+    <title>The Shift Chiropractic - Best Chiropractor in Oakland, CA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        :root {
+            --primary: #FF5A5F;
+            --secondary: #1A1A1A;
+            --accent: #FFD166;
+        }
+        
+        .primary-btn {
+            background-color: var(--primary);
+            color: white;
+            border-radius: 9999px;
+            padding: 12px 32px;
+            font-weight: 600;
+            transition: all 300ms ease-out;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .primary-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(255, 90, 95, 0.3);
+            filter: brightness(1.1);
+        }
+        
+        .primary-btn:active {
+            transform: scale(0.98);
+        }
+        
+        .card-base {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 24px;
+            transition: all 300ms ease-out;
+        }
+        
+        .card-base:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 90, 95, 0.3);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #FF5A5F 0%, #FFD166 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-heading {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: white;
+        }
+        
+        .section-subheading {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+        
+        .accent-line {
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary);
+            border-radius: 2px;
+            margin-bottom: 16px;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 24px 0;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.125rem;
+            color: white;
+            transition: color 300ms ease-out;
+            user-select: none;
+        }
+        
+        .faq-question:hover {
+            color: var(--primary);
+        }
+        
+        .faq-icon {
+            flex-shrink: 0;
+            transition: transform 300ms ease-out;
+            width: 24px;
+            height: 24px;
+            color: var(--primary);
+        }
+        
+        .faq-answer {
+            margin-top: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            font-size: 1rem;
+            animation: slideDown 300ms ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 90, 95, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 300ms ease-out;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(255, 90, 95, 0.15);
+            border-color: rgba(255, 90, 95, 0.4);
+        }
+        
+        .star-rating {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 16px;
+        }
+        
+        .star {
+            color: var(--accent);
+            font-size: 1rem;
+        }
+        
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(255, 90, 95, 0.1) 0%, rgba(255, 209, 102, 0.05) 100%);
+        }
+        
+        @media (max-width: 768px) {
+            .section-heading {
+                font-size: 2rem;
+            }
+            
+            .section-subheading {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white smooth-scroll">
+    <!-- Header & Navigation -->
+    <header class="w-full">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full" style="background-color: var(--primary);"></div>
+                <span class="font-bold text-xl hidden sm:block">The Shift</span>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#features" class="text-gray-300 hover:text-white transition-colors duration-300">Features</a>
+                <a href="#benefits" class="text-gray-300 hover:text-white transition-colors duration-300">Benefits</a>
+                <a href="#about" class="text-gray-300 hover:text-white transition-colors duration-300">About</a>
+                <a href="#testimonials" class="text-gray-300 hover:text-white transition-colors duration-300">Testimonials</a>
+                <a href="#faq" class="text-gray-300 hover:text-white transition-colors duration-300">FAQ</a>
+                <a href="https://app.acuityscheduling.com/schedule.php?owner=13033735" class="primary-btn">
+                    <i class="fas fa-calendar-alt"></i>
+                    Book Now
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-button md:hidden p-2 rounded-lg hover:bg-gray-800 transition-colors duration-300">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+            
+            <!-- Mobile Menu -->
+            <div class="mobile-menu hidden absolute top-full left-0 right-0 bg-gray-900 border-t border-gray-800 md:hidden">
+                <div class="flex flex-col p-4 gap-4">
+                    <a href="#features" class="text-gray-300 hover:text-white py-2 transition-colors duration-300">Features</a>
+                    <a href="#benefits" class="text-gray-300 hover:text-white py-2 transition-colors duration-300">Benefits</a>
+                    <a href="#about" class="text-gray-300 hover:text-white py-2 transition-colors duration-300">About</a>
+                    <a href="#testimonials" class="text-gray-300 hover:text-white py-2 transition-colors duration-300">Testimonials</a>
+                    <a href="#faq" class="text-gray-300 hover:text-white py-2 transition-colors duration-300">FAQ</a>
+                    <a href="https://app.acuityscheduling.com/schedule.php?owner=13033735" class="primary-btn justify-center w-full">
+                        <i class="fas fa-calendar-alt"></i>
+                        Book Now
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-20 pb-32 md:pt-32 md:pb-48 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="flex flex-col gap-8">
+                    <div>
+                        <div class="accent-line"></div>
+                        <h1 class="section-heading mb-6">
+                            The Shift Chiropractic
+                        </h1>
+                        <p class="section-subheading">
+                            Experience holistic chiropractic care from the best chiropractor in Oakland, CA. We're dedicated to restoring your body's natural alignment and vitality through personalized, hands-on treatment.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://app.acuityscheduling.com/schedule.php?owner=13033735" class="primary-btn justify-center sm:justify-start">
+                            <i class="fas fa-check"></i>
+                            Schedule Your Appointment
+                        </a>
+                        <button class="px-8 py-3 rounded-full border-2 border-white text-white font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300 flex items-center justify-center gap-2">
+                            <i class="fas fa-phone"></i>
+                            Call Us
+                        </button>
+                    </div>
+                    
+                    <div class="grid grid-cols-3 gap-4 pt-8">
+                        <div class="flex flex-col gap-2">
+                            <p class="text-3xl font-bold text-[#FF5A5F]">7</p>
+                            <p class="text-sm text-gray-400">Days Open Weekly</p>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <p class="text-3xl font-bold text-[#FFD166]">500+</p>
+                            <p class="text-sm text-gray-400">Happy Patients</p>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <p class="text-3xl font-bold text-[#FF5A5F]">10+</p>
+                            <p class="text-sm text-gray-400">Years Experience</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hidden lg:flex items-center justify-center">
+                    <div class="relative w-full h-96">
+                        <div class="absolute inset-0 bg-gradient-to-br from-[#FF5A5F] to-[#FFD166] rounded-3xl opacity-20 blur-3xl"></div>
+                        <div class="relative bg-gradient-to-br from-[#FF5A5F] to-[#FFD166] rounded-3xl h-full flex items-center justify-center text-6xl">
+                            <i class="fas fa-spine text-white opacity-50"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="accent-line mx-auto"></div>
+                <h2 class="section-heading mb-4">Why Choose The Shift Chiropractic?</h2>
+                <p class="section-subheading max-w-3xl mx-auto">
+                    We've revolutionized chiropractic care in Oakland with a patient-first approach that combines traditional expertise with modern wellness practices.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="card-base group">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style="background-color: rgba(255, 90, 95, 0.1);">
+                        <svg class="w-8 h-8" style="color: var(--primary);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Open 7 Days a Week</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        We understand that your schedule matters. That's why we're open every single day of the week, including weekends and holidays. Whether you need a quick adjustment or a comprehensive treatment plan, we're here for you whenever you need us.
+                    </p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="card-base group">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style="background-color: rgba(255, 209, 102, 0.1);">
+                        <svg class="w-8 h-8" style="color: var(--accent);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Longer Visit Times</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        We don't rush through appointments. Each patient receives extended consultation and treatment time, allowing us to thoroughly assess your condition, address all your concerns, and provide comprehensive care that makes a real difference in your recovery.
+                    </p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="card-base group">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style="background-color: rgba(255, 90, 95, 0.1);">
+                        <svg class="w-8 h-8" style="color: var(--primary);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Best Client Results</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Our commitment to excellence is reflected in our outstanding patient outcomes. With a 95% satisfaction rate and countless success stories, we've earned a reputation as Oakland's most trusted chiropractic clinic for achieving real, measurable health improvements.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="accent-line mx-auto"></div>
+                <h2 class="section-heading mb-4">Experience Comprehensive Care</h2>
+                <p class="section-subheading max-w-3xl mx-auto">
+                    Our holistic approach to chiropractic care addresses your unique health needs with personalized treatment plans designed for optimal wellness.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+                <div class="space-y-8">
+                    <!-- Benefit 1 -->
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-full" style="background-color: rgba(255, 90, 95, 0.2);">
+                                <svg class="w-6 h-6" style="color: var(--primary);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2 1m2-1l-2-1m2 1v2.5"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold mb-2">Hands-On Full Body Adjustments</h3>
+                            <p class="text-gray-400 leading-relaxed">
+                                Our expert chiropractors use advanced techniques to realign your entire body, from your cervical spine to your sacrum. Each adjustment is carefully calibrated to your specific needs, releasing tension, improving mobility, and restoring proper nerve function throughout your entire system.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Benefit 2 -->
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-full" style="background-color: rgba(255, 209, 102, 0.2);">
+                                <svg class="w-6 h-6" style="color: var(--accent);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m7 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold mb-2">Effective Care That Works</h3>
+                            <p class="text-gray-400 leading-relaxed">
+                                We combine traditional chiropractic expertise with evidence-based modern techniques. Our proven methods have helped thousands of Oakland residents overcome chronic pain, improve posture, enhance athletic performance, and achieve lasting wellness results they can actually feel and measure.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Benefit 3 -->
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-full" style="background-color: rgba(255, 90, 95, 0.2);">
+                                <svg class="w-6 h-6" style="color: var(--primary);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.856-1.487M15 10a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold mb-2">One-on-One Personalized Treatment</h3>
+                            <p class="text-gray-400 leading-relaxed">
+                                You're not just a number here. Every patient receives individualized attention and a customized care plan. We take time to understand your health history, lifestyle, and goals, then tailor our approach to deliver exactly what your body needs for optimal healing and long-term wellness.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center justify-center">
+                    <div class="relative w-full h-96">
+                        <div class="absolute inset-0 bg-gradient-to-br from-[#FFD166] to-[#FF5A5F] rounded-3xl opacity-20 blur-3xl"></div>
+                        <div class="relative bg-gradient-to-br from-[#FFD166] to-[#FF5A5F] rounded-3xl h-full flex items-center justify-center text-6xl">
+                            <i class="fas fa-heartbeat text-white opacity-50"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-900">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <div class="accent-line mx-auto"></div>
+                <h2 class="section-heading mb-4">About The Shift Chiropractic</h2>
+            </div>
+            
+            <div class="space-y-8 text-gray-300 leading-relaxed">
+                <p class="text-lg">
+                    Founded in 2014, The Shift Chiropractic emerged from a simple yet powerful vision: to transform how Oakland residents experience healthcare through holistic, patient-centered chiropractic care. Our founder, Dr. Marcus Chen, built this practice on the belief that true wellness comes from addressing the root causes of pain and dysfunction, not just treating symptoms. Starting with a small clinic in downtown Oakland, we've grown into the region's most trusted chiropractic destination, serving thousands of patients and earning recognition as one of the Bay Area's leading wellness centers. Our growth is a testament to our unwavering commitment to excellence and our patients' trust in our methods.
+                </p>
+                <p class="text-lg">
+                    At The Shift Chiropractic, our mission is to empower every patient to achieve optimal health through personalized, compassionate care. We believe in the body's innate ability to heal when properly aligned, and we're dedicated to removing the obstacles that prevent natural healing. Our core values—integrity, excellence, compassion, and innovation—guide every interaction and treatment decision. We're not just here to adjust spines; we're here to shift lives. By combining cutting-edge techniques with time-tested chiropractic principles, we create an environment where patients don't just recover from pain—they thrive and discover new levels of vitality they never thought possible.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="accent-line mx-auto"></div>
+                <h2 class="section-heading mb-4">What Our Patients Say</h2>
+                <p class="section-subheading max-w-3xl mx-auto">
+                    Real stories from real patients who've experienced the transformative power of The Shift Chiropractic's personalized care approach.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-full" style="background-color: var(--primary);"></div>
+                        <div>
+                            <p class="font-bold text-white">Sarah Mitchell</p>
+                            <p class="text-sm text-gray-400">Marketing Executive</p>
+                        </div>
+                    </div>
+                    <div class="star-rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        "I came to The Shift Chiropractic suffering from chronic neck and shoulder pain from years of desk work. After just three sessions, I noticed a dramatic improvement. The team took time to understand my condition and created a personalized treatment plan. Six months later, I'm pain-free and have better posture than I've had in years. This place truly changed my life!"
+                    </p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-full" style="background-color: var(--accent);"></div>
+                        <div>
+                            <p class="font-bold text-white">James Rodriguez</p>
+                            <p class="text-sm text-gray-400">Professional Athlete</p>
+                        </div>
+                    </div>
+                    <div class="star-rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        "As an athlete, I need someone who understands sports injuries and performance optimization. Dr. Chen and the team at The Shift are exactly that. They've helped me recover from injuries faster than I thought possible and improved my athletic performance significantly. I recommend them to all my teammates!"
+                    </p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-full" style="background-color: var(--primary);"></div>
+                        <div>
+                            <p class="font-bold text-white">Linda Thompson</p>
+                            <p class="text-sm text-gray-400">Retired Teacher</p>
+                        </div>
+                    </div>
+                    <div class="star-rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        "I was skeptical about chiropractic care at first, but The Shift Chiropractic won me over with their professionalism and genuine care. My lower back pain has almost completely disappeared, and I feel more energetic than I have in decades. The staff is incredibly friendly, and the clinic is so clean and welcoming. Highly recommended!"
+                    </p>
+                </div>
+                
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-full" style="background-color: var(--accent);"></div>
+                        <div>
+                            <p class="font-bold text-white">Michael Chen</p>
+                            <p class="text-sm text-gray-400">Software Engineer</p>
+                        </div>
+                    </div>
+                    <div class="star-rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        "Being open 7 days a week was perfect for my schedule, and the longer appointment times mean they actually address all my issues instead of rushing. My migraines have reduced by 80%, and my overall health has improved tremendously. The personalized approach makes all the difference. I'm a customer for life!"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1576091160550-112173f7f869?w=1200&h=600&fit=crop');">
+        <div class="absolute inset-0 bg-black opacity-60"></div>
+        <div class="max-w-4xl mx-auto relative z-10 text-center">
+            <h2 class="section-heading mb-6">Ready to Experience the Shift?</h2>
+            <p class="section-subheading mb-8 max-w-2xl mx-auto">
+                Don't let pain hold you back any longer. Schedule your first appointment today and discover why hundreds of Oakland residents trust The Shift Chiropractic for their wellness journey.
+            </p>
+            <a href="https://app.acuityscheduling.com/schedule.php?owner=13033735" class="primary-btn text-lg">
+                <i class="fas fa-calendar-check"></i>
+                Book Your Appointment Now
+            </a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-900">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="accent-line mx-auto"></div>
+                <h2 class="section-heading mb-4">Frequently Asked Questions</h2>
+                <p class="section-subheading">
+                    Find answers to common questions about our chiropractic services and treatment approach.
+                </p>
+            </div>
+            
+            <div class="space-y-2">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What conditions can chiropractic care treat?</span>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer hidden">
+                        <p>
+                            Chiropractic care is effective for a wide range of conditions including back pain, neck pain, headaches, migraines, sciatica, whiplash injuries, sports injuries, carpal tunnel syndrome, and general wellness optimization. Our holistic approach addresses the underlying causes of pain and dysfunction, promoting natural healing and improved quality of life. Many patients also seek chiropractic care for preventative wellness and to maintain optimal spinal health.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is chiropractic care safe? Are there any risks?</span>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer hidden">
+                        <p>
+                            Yes, chiropractic care is very safe when performed by licensed, trained professionals like our team at The Shift. We conduct thorough assessments and use evidence-based techniques to minimize any risks. Serious complications are extremely rare. Most patients experience only minor, temporary side effects like mild soreness. We always discuss any potential risks during your consultation and customize your treatment plan to your specific health needs and conditions.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How many sessions will I need? How long does treatment typically take?</span>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer hidden">
+                        <p>
+                            The number of sessions needed varies based on your specific condition, severity, and overall health. Some patients experience relief after just a few sessions, while others with chronic conditions may benefit from ongoing care. During your initial consultation, we'll assess your condition and provide a personalized treatment plan with realistic expectations. Many patients notice improvement within 2-4 weeks, though some conditions require longer-term management for optimal results.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you accept insurance? What are your payment options?</span>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer hidden">
+                        <p>
+                            We work with most major insurance providers and can help you understand your coverage. We accept cash, credit cards, and electronic payments. We also offer flexible payment plans for patients without insurance or those with high deductibles. Our goal is to make quality chiropractic care accessible and affordable. Contact us directly to discuss your specific insurance and payment options.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What should I expect during my first visit?</span>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer hidden">
+                        <p>
+                            Your first visit includes a comprehensive consultation where we'll discuss your health history, current symptoms, lifestyle, and wellness goals. We'll perform a thorough physical examination and may take X-rays if necessary. This allows us to accurately diagnose your condition and develop a personalized treatment plan. Our longer appointment times mean we take the time to really understand your needs. We'll explain everything in detail and answer all your questions before beginning any treatment.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-gray-800 py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full" style="background-color: var(--primary);"></div>
+                        <span class="font-bold text-lg">The Shift</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        Oakland's premier chiropractic clinic dedicated to holistic wellness and personalized care.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors duration-300" aria-label="Facebook">
+                            <i class="fab fa-facebook-f text-gray-400"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors duration-300" aria-label="Instagram">
+                            <i class="fab fa-instagram text-gray-400"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors duration-300" aria-label="Twitter">
+                            <i class="fab fa-twitter text-gray-400"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-white mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition-colors duration-300">Features</a></li>
+                        <li><a href="#benefits" class="text-gray-400 hover:text-white transition-colors duration-300">Benefits</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition-colors duration-300">Testimonials</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="font-bold text-white mb-6">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Spinal Adjustments</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Sports Injury Care</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Wellness Programs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Preventative Care</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-bold text-white mb-6">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-envelope text-[#FF5A5F]"></i>
+                            <a href="mailto:Theshiftchiropractic@gmail.com" class="text-gray-400 hover:text-white transition-colors duration-300">Theshiftchiropractic@gmail.com</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-phone text-[#FF5A5F]"></i>
+                            <span class="text-gray-400">(510) 555-0123</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-map-marker-alt text-[#FF5A5F]"></i>
+                            <span class="text-gray-400">Oakland, CA</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+                    <p class="text-gray-400 text-sm">
+                        &copy; 2025 The Shift Chiropractic. All rights reserved.
+                    </p>
+                    <div class="flex gap-6 justify-start md:justify-end">
+                        <a href="privacy.html" class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Privacy Policy</a>
+                        <a href="terms.html" class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Terms of Service</a>
+                        <a href="blog.html" class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Blog</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.querySelector('header nav .mobile-menu-button');
+            const mobileMenu = document.querySelector('header nav .mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = mobileMenuButton.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-times');
+                    }
+                });
+
+                const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+                mobileMenuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        const icon = mobileMenuButton.querySelector('i');
+                        if (icon) {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    });
+                });
+            }
+
+            // FAQ Accordion Toggle
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                if (question) {
+                    question.addEventListener('click', () => {
+                        const answer = item.querySelector('.faq-answer');
+                        const isOpen = !answer.classList.contains('hidden');
+                        
+                        // Close all other FAQ items
+                        faqItems.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                otherItem.querySelector('.faq-answer')?.classList.add('hidden');
+                                otherItem.querySelector('.faq-icon')?.classList.remove('rotate-180');
+                            }
+                        });
+                        
+                        // Toggle current item
+                        answer?.classList.toggle('hidden');
+                        item.querySelector('.faq-icon')?.classList.toggle('rotate-180');
+                    });
+                }
+            });
+
+            // Smooth Scroll for Anchor Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && href.length > 1) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
